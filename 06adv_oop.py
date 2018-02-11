@@ -1,0 +1,103 @@
+# @property
+class Student(object):
+    # class attribute count
+    count = 0
+
+    def __init__(self, name, gender):
+        self.__name = name
+        if gender in ('male', 'female'):
+            self.__gender = gender
+            Student.count += 1
+
+    @property
+    def gender(self):
+        return self.__gender
+
+    @gender.setter
+    def gender(self, gender):
+        if gender in ('male', 'female'):
+            self.__gender = gender
+        else:
+            raise ValueError('wrong gender type')
+
+    def hit(self, name):
+        print('%s hit %s' % (self.__name, name))
+
+    def print_score(self):
+        print('%s: %s' % (self.__name, self.__score))
+
+    @property
+    def grade(self):
+        if self.__score >= 90:
+            return 'A'
+        elif self.__score >= 80:
+            return 'B'
+        else:
+            return 'C'
+
+    @property
+    def name(self):
+        return self.__name
+
+    @property
+    def score(self):
+        return self.__score
+
+    @score.setter
+    def score(self, score):
+        if not isinstance(score, int):
+            raise ValueError('score must be an integer!')
+        if score < 0 or score > 100:
+            raise ValueError('score must between 0 ~ 100!')
+        self.__score = score
+
+
+bart = Student('Bart', 'male')
+daye = Student('Daye', 'male')
+daye.score = 100
+
+print(daye.score)
+print(bart.gender)
+print(daye.grade)
+
+
+class Screen(object):
+
+    @property
+    def width(self):
+        return self.__width
+
+    @width.setter
+    def width(self, width):
+        if not isinstance(width, int):
+            raise ValueError('width should be an integer')
+        self.__width = width
+
+    @property
+    def height(self):
+        return self.__height
+
+    @height.setter
+    def height(self, height):
+        if not isinstance(height, int):
+            raise ValueError('height should be an integer')
+        self.__height = height
+
+    @property
+    def resolution(self):
+        self.__resolution = self.__height * self.__width
+        return self.__resolution
+
+
+class Student2(object):
+    def __init__(self, name):
+        self.name = name
+
+    def __str__(self):
+        return 'Student object (name: %s)' % self.name
+
+    __repr__ = __str__
+
+
+Student2('Michael')
+print(Student2('Michael'))
