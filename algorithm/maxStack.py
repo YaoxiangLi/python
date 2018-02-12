@@ -19,7 +19,7 @@ class MaxStack(object):
         :type x: int
         :rtype: void
         """
-        if self.items == []:
+        if not self.items:
             self.items.append((x, x))
         else:
             m = self.items[-1][1]
@@ -32,7 +32,7 @@ class MaxStack(object):
         """
         :rtype: void
         """
-        if self.items == []:
+        if not self.items:
             return None
         else:
             a = self.items[-1][0]
@@ -43,7 +43,7 @@ class MaxStack(object):
         """
         :rtype: int
         """
-        if self.items == []:
+        if not self.items:
             return None
         else:
             return self.items[-1][0]
@@ -52,13 +52,13 @@ class MaxStack(object):
         """
         :rtype: int
         """
-        if self.items == []:
+        if not self.items:
             return None
         else:
             return self.items[-1][1]
 
     def popMax(self):
-        if self.items == []:
+        if not self.items:
             return None
         else:
             items2 = []

@@ -138,7 +138,7 @@ user3 = {'ID': 'dage',
 
 
 # The double asterisk form is used to pass
-# a keyworded, variable-length argument list
+# a key-worded, variable-length argument list
 def onClick(**kw):
     if ('ID' in kw) and ('password' in kw) and ('score' in kw):
         print('Hello ' + kw['ID'] + ', your socre is ' + str(kw['score']))
@@ -152,6 +152,7 @@ def onClick(**kw):
 # onClick(**user1)
 # onClick(**user2)
 # onClick(**user3)
+
 
 # Another example for *args
 def product(*args):
