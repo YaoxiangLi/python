@@ -48,20 +48,16 @@ def double_inputs():
         yield x * 2
 
 
+import inspect
+
+# 协程使用生成器函数定义：定义体中有yield关键字。
 
 
+def simple_coroutine():
+    print('-> coroutine started')    # yield 在表达式中使用；如果协程只需要从客户那里接收数据，yield关键字右边不需要加表达式（yield默认返回None）
+    x = yield
+    print('-> coroutine received:', x)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+my_coro = simple_coroutine()# 和创建生成器的方式一样，调用函数得到生成器对象。
+print(inspect.getgeneratorstate(my_coro))
