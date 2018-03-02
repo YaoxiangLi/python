@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import math
+from utils import timer
 
 # Data type
 
@@ -50,8 +51,10 @@ print(L[1][1])
 # 打印Lisa:
 print(L[-1][-1])
 
+print(__name__)
 
 # if elif example
+@timer
 def bmi(height, weight):
     my_bmi = float(weight) / float(height) ** 2
     if my_bmi < 18.5:
@@ -67,6 +70,7 @@ def bmi(height, weight):
     # print('Your bmi is %f, and you are %s' % (my_bmi, status))
     return my_bmi, status
 
+print(bmi(250, 44))
 
 # if elif example 2
 def my_abs(x):
@@ -92,7 +96,7 @@ def quadratic(a, b, c):
 # function's default parameter
 def power(x, n=2):
     s = 1
-    for i in range(n):
+    for _ in range(n):
         s *= x
     return s
 
