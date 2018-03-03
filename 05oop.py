@@ -47,7 +47,7 @@ class Student(object):
 
 
 bart = Student('Bart', 'male')
-daye = Student('Daye', 'male')
+simon = Student('Simon', 'male')
 print(Student.count)
 
 

@@ -102,9 +102,9 @@ def slow(x, y, z):
 f = fast(11, 22)
 s = slow(11, 22, 33)
 if f != 33:
-    print('测试失败!')
+    print('fail!')
 elif s != 7986:
-    print('测试失败!')
+    print('fail!')
 
 
 def log2(text=''):

@@ -53,12 +53,12 @@ class Student(object):
 
 
 bart = Student('Bart', 'male')
-daye = Student('Daye', 'male')
-daye.score = 100
+simon = Student('Simon', 'male')
+simon.score = 100
 
-print(daye.score)
+print(simon.score)
 print(bart.gender)
-print(daye.grade)
+print(simon.grade)
 
 
 class Screen(object):
@@ -101,3 +101,44 @@ class Student2(object):
 
 Student2('Michael')
 print(Student2('Michael'))
+
+
+class Fib(object):
+    """docstring for Fib"""
+    def __init__(self):
+        self.a, self.b = 0, 1
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        self.a, self.b = self.b, self.a + self.b
+        if self.a > 100000:
+            raise StopIteration()
+        return self.a
+
+    def __getitem__(self, n):
+        if isinstance(n, int):  # n是索引
+            a, b = 1, 1
+            for x in range(n):
+                a, b = b, a + b
+            return a
+        if isinstance(n, slice):  # n是切片
+            start = n.start
+            stop = n.stop
+            if start is None:
+                start = 0
+            a, b = 1, 1
+            L = []
+            for x in range(stop):
+                if x >= start:
+                    L.append(a)
+                a, b = b, a + b
+            return L
+
+
+for n in Fib():
+    print(n)
+f = Fib()
+print(f[0:5])
+print(f[:10])

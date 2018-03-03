@@ -3,6 +3,7 @@
 from math import cos, pi
 from functools import reduce
 
+
 # function as input
 # 'listGenerator' a implementation of 'map' function
 def listGen(f, list):
@@ -24,6 +25,7 @@ L1 = ['adam', 'LISA', 'barT']
 L2 = list(map(normalize, L1))
 print(L2)
 
+
 # example of reduce function
 def prod(list):
     def fn(x, y):
@@ -34,9 +36,9 @@ def prod(list):
 # test:
 print('3 * 5 * 7 * 9 =', prod([3, 5, 7, 9]))
 if prod([3, 5, 7, 9]) == 945:
-    print('测试成功!')
+    print('pass!')
 else:
-    print('测试失败!')
+    print('fail!')
 
 # pre-defined dictionary for str2nums
 DIGITS = {'0': 0,
@@ -69,9 +71,9 @@ def str2float(s):
 # test:
 print('str2float(\'123.456\') =', str2float('123.456'))
 if abs(str2float('123.456') - 123.456) < 0.00001:
-    print('测试成功!')
+    print('pass!')
 else:
-    print('测试失败!')
+    print('fail!')
 
 
 # Palindrome
@@ -101,9 +103,9 @@ if list(filter(is_palindrome_2,
                                    101, 111, 121, 131,
                                    141, 151, 161, 171,
                                    181, 191]:
-    print('测试成功!')
+    print('pass!')
 else:
-    print('测试失败!')
+    print('fail!')
 
 L = [('Bob', 75), ('Adam', 92), ('Bart', 66), ('Lisa', 88)]
 
@@ -137,6 +139,7 @@ def createCounter():
     return counter
 '''
 
+
 # study until mid-night
 def createCounter():
     def counter():
@@ -146,17 +149,18 @@ def createCounter():
     return counter
 
 
-# 测试:
+# test:
 counterA = createCounter()
 
 print(counterA(), counterA(), counterA(), counterA(), counterA())  # 1 2 3 4 5
 
 counterB = createCounter()
 if [counterB(), counterB(), counterB(), counterB()] == [1, 2, 3, 4]:
-    print('测试通过!')
+    print('pass!')
 else:
-    print('测试失败!')
+    print('fail!')
 
-# Lambda 
+
+# Lambda
 L = list(filter(lambda n: n % 2 == 1, range(1, 20)))
 print (L)

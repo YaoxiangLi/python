@@ -39,6 +39,7 @@ class Solution:
         :type nums2: List[int]
         :rtype: List[int]
         """
+
         stack = []
         dic = {}
         for num in nums2:
